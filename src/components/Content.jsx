@@ -33,7 +33,7 @@ const Content = () => {
         </h1>
         <div className="flex justify-center">
           <button
-            onClick={() => navigate("/demo-form")}
+            onClick={() => navigate("/book-demo")}
             className="p-2 bg-gray-800 text-white rounded active:border-black border active:bg-slate-100 active:text-black font-medium"
           >
             Get started for Free

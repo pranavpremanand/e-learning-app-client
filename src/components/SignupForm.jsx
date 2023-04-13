@@ -27,7 +27,7 @@ const SignupForm = () => {
   };
   return (
     <div className="flex justify-center lg:justify-start pt-5 lg:pl-20 lg:pt-20">
-      <div className="w-9/12 gap-3 items-center bg-gray-200 py-16 grid lg:grid-cols-2 grid-cols-1 px-10">
+      <div className="w-11/12 sm:w-9/12 gap-3 items-center bg-gray-200 py-16 grid lg:grid-cols-2 grid-cols-1 px-10">
         <div className="flex flex-col gap-3">
           <div className="text-2xl md:text-3xl font-bold">
             Book your Free Demo Session

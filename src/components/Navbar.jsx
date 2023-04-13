@@ -18,7 +18,7 @@ const Navbar = () => {
   const navOptions = [
     { name: "Categories", link: "/" },
     { name: "Popular Courses", link: "/" },
-    { name: "Get started for Free", link: "/demo-form" },
+    { name: "Get started for Free", link: "/book-demo" },
   ];
 
   const logoutUser = () => {
@@ -56,7 +56,7 @@ const Navbar = () => {
           Popular Courses
         </div>
         <div
-          onClick={() => navigate("/demo-form")}
+          onClick={() => navigate("/book-demo")}
           className="text-md cursor-pointer"
         >
           Get started for Free
