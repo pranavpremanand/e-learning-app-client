@@ -1,16 +1,19 @@
 import Navbar from "../components/Navbar";
 import LogoImg from "../assets/udemy-logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { baseUrl } from "../API/baseUrl";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
+import { toast } from "react-hot-toast";
+import { SpinnerContext } from "../components/Context";
 
 const Login = () => {
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
-  const dispatch = useDispatch()
+  const { showLoading, hideLoading } = useContext(SpinnerContext);
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -23,16 +26,24 @@ const Login = () => {
   // Login user
   const loginUser = async (e) => {
     e.preventDefault();
+    showLoading();
     try {
       const response = await baseUrl.post("/login", data);
       if (response.data.success) {
-        dispatch(setUser(response.data.user))
+        dispatch(setUser(response.data.user));
         localStorage.setItem("user", JSON.stringify(response.data.user));
-        localStorage.setItem('eLearningUserToken',response.data.token)
+        localStorage.setItem("eLearningUserToken", response.data.token);
+        hideLoading();
         navigate("/");
+      } else {
+        hideLoading();
+        toast(response.data.message, {
+          icon: "⚠️",
+        });
       }
     } catch (err) {
-      // handle err
+      toast.error("Something went wrong");
+      hideLoading();
     }
   };
   return (

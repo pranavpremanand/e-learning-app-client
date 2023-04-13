@@ -20,9 +20,9 @@ const SignupForm = () => {
     if (!info.class.length) {
       setErr({ ...err, classErr: "This field is required" });
     } else {
-      toast.success('Request submitted')
-      setInfo({name:'',phone:'',class:''})
-      e.target.reset()
+      toast.success("Request submitted");
+      setInfo({ name: "", phone: "", class: "" });
+      e.target.reset();
     }
   };
   return (
@@ -112,9 +112,10 @@ const SignupForm = () => {
                 {open && (
                   <div className="self-end mt-2 bg-slate-500 rounded-md">
                     <ul>
-                      {classList.map((val) => {
+                      {classList.map((val,index) => {
                         return (
                           <li
+                          key={index}
                             onClick={() => {
                               setInfo({ ...info, class: val });
                               setOpen(false);
