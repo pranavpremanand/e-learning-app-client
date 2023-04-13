@@ -38,7 +38,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route
-                path="/demo-form"
+                path="/book-demo"
                 element={
                   <ProtectedRoute>
                     <DemoForm />

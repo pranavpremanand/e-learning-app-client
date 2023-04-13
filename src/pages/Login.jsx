@@ -49,11 +49,11 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col justify-center items-center mt-5 sm:mt-10 gap-2">
+      <div className="pt-28 sm:pt-36 flex flex-col justify-center items-center gap-2">
         <img src={LogoImg} className="w-32" alt="" />
         <form onSubmit={loginUser} className="">
           <div className="flex flex-col justify-center items-center w-screen gap-4">
-            <div className="w-4/6 sm:w-1/2 lg:w-1/4 max-w-sm">
+            <div className="w-5/6 sm:w-1/2 lg:w-1/4 max-w-sm">
               <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-2 mr-0 mb-0 ml-2 text-sm font-medium text-gray-800 absolute">
                 Email
               </p>
@@ -89,7 +89,7 @@ const Login = () => {
                 <small style={{ color: "red" }}>{err.emailErr}</small>
               )}
             </div>
-            <div className=" relative w-4/6 sm:w-1/2 lg:w-1/4 max-w-sm">
+            <div className="relative w-5/6 sm:w-1/2 lg:w-1/4 max-w-sm">
               <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-2 mr-0 mb-0 ml-2 text-sm font-medium text-gray-800 absolute">
                 Password
               </p>
@@ -134,7 +134,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="rounded w-4/6 sm:w-1/2 lg:w-1/4 max-w-sm py-3 font-medium text-xl bg-gray-900 text-white"
+              className="rounded w-5/6 sm:w-1/2 lg:w-1/4 max-w-sm py-3 font-medium text-xl bg-gray-900 text-white"
             >
               Login
             </button>

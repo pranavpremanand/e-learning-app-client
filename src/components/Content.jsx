@@ -27,7 +27,7 @@ const Content = () => {
   ];
   return (
     <>
-      <div className="pt-7 gap-5 flex flex-col justify-center">
+      <div className="pt-28 gap-5 flex flex-col justify-center">
         <h1 className="capitalize px-3 text-2xl md:text-4xl text-center font-bold">
           Explore inspiring online courses
         </h1>

@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="hidden h-20 pr-5 shadow-sm shadow-slate-300 xl:flex items-center justify-between pl-5">
+      <div className="z-50 bg-white fixed hidden h-20 pr-5 shadow-sm shadow-slate-300 xl:flex items-center justify-between pl-5">
         <img
           src={LogoImg}
           onClick={() => navigate("/")}
@@ -94,11 +94,11 @@ const Navbar = () => {
           <RxGlobe fontSize={"1.5rem"} />
         </div>
       </div>
-      <div className="xl:hidden h-20 shadow-sm shadow-gray-400 flex justify-between px-5 sm:px-10 items-center">
+      <div className="z-50 bg-white fixed w-full xl:hidden h-20 shadow-sm shadow-gray-400 flex justify-between px-5 sm:px-10 items-center">
         {!open ? (
-          <RxHamburgerMenu onClick={() => setOpen(true)} fontSize={"1.5rem"} />
+          <RxHamburgerMenu className="cursor-pointer" onClick={() => setOpen(true)} fontSize={"1.5rem"} />
         ) : (
-          <VscChromeClose onClick={() => setOpen(false)} fontSize={"1.5rem"} />
+          <VscChromeClose className="cursor-pointer" onClick={() => setOpen(false)} fontSize={"1.5rem"} />
         )}
         <img
           src={LogoImg}
@@ -108,7 +108,7 @@ const Navbar = () => {
         />
       </div>
       {open && (
-        <div className="max-w bg-gray-50 flex flex-col gap-2 py-5">
+        <div className="fixed w-full rounded-b-md shadow-md xl:hidden pt-24 z-10 bg-gray-50 flex flex-col gap-2 py-5">
           {navOptions.map((option, index) => {
             return (
               <div
