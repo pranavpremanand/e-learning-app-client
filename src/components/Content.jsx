@@ -25,14 +25,17 @@ const Content = () => {
   ];
   return (
     <>
-      <div className="pt-7">
-        <h1 className="capitalize mb-5 text-3xl md:text-4xl text-center font-bold">
+      <div className="pt-7 gap-5 flex flex-col justify-center">
+        <h1 className="capitalize px-3 text-2xl md:text-4xl text-center font-bold">
           Explore inspiring online courses
         </h1>
         <div className="gap-3 pb-5 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {coursesData.map((data) => {
+          {coursesData.map((data, index) => {
             return (
-              <div className="p-3 hover:scale-105 cursor-pointer bg-gray-100 rounded-md">
+              <div
+                key={index}
+                className="p-3 hover:scale-105 cursor-pointer bg-gray-100 rounded-md"
+              >
                 <img
                   src={data.img}
                   className="mb-3 w-full object-cover h-40"

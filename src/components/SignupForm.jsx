@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 const SignupForm = () => {
   const classList = ["Class 1", "Class 2", "Class 3"];
@@ -18,6 +19,10 @@ const SignupForm = () => {
     e.preventDefault();
     if (!info.class.length) {
       setErr({ ...err, classErr: "This field is required" });
+    } else {
+      toast.success('Request submitted')
+      setInfo({name:'',phone:'',class:''})
+      e.target.reset()
     }
   };
   return (
@@ -128,7 +133,7 @@ const SignupForm = () => {
             </div>
             <button
               type="submit"
-              className="mt-3 uppercase w-full rounded-sm bg-orange-600 py-2 text-white font-medium active:bg-orange-700"
+              className="mt-4 uppercase w-full rounded-sm bg-orange-600 py-2 text-white font-medium active:bg-orange-700"
             >
               Submit request
             </button>
