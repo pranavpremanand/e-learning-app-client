@@ -87,14 +87,14 @@ const SignupForm = () => {
                       setErr({ ...err, phoneErr: "" });
                     }
                   }}
-                  className="p-2 w-full rounded-sm placeholder:text-neutral-400 focus:outline-none"
+                  className="mb-1 p-2 w-full rounded-sm placeholder:text-neutral-400 focus:outline-none"
                 />
                 {err.phoneErr && (
                   <small className="text-red-600">{err.phoneErr}</small>
                 )}
               </div>
-              <div className="md:absolute right-0 md:w-1/2 rounded-sm">
-                <div className="w-full py-2 bg-white">
+              <div className="md:absolute md:right-0 md:w-1/2 rounded-sm">
+                <div className="mb-1 w-full py-2 bg-white">
                   <button
                     type="button"
                     onClick={() => setOpen((prev) => !prev)}

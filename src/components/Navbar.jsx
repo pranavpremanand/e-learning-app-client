@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LogoImg from "../assets/udemy-logo.png";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { RxGlobe } from "react-icons/rx";
@@ -7,10 +7,12 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUser } from "../redux/userSlice";
+import { SpinnerContext } from "./Context";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.userData);
+  let user = useSelector((state) => state.user.userData);
+  const { showLoading, hideLoading } = useContext(SpinnerContext);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const navOptions = [
@@ -20,9 +22,14 @@ const Navbar = () => {
   ];
 
   const logoutUser = () => {
+    showLoading();
     localStorage.clear();
     dispatch(resetUser());
-    navigate("/login");
+    user = null;
+    setTimeout(() => {
+      hideLoading();
+      navigate("/login");
+    }, 300);
   };
 
   return (
