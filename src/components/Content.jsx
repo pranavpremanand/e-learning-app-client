@@ -26,49 +26,47 @@ const Content = () => {
     },
   ];
   return (
-    <>
-      <div className="pt-28 gap-5 flex flex-col justify-center">
-        <h1 className="capitalize px-3 text-2xl md:text-4xl text-center font-bold">
-          Explore inspiring online courses
-        </h1>
-        <div className="flex justify-center">
-          <button
-            onClick={() => navigate("/book-demo")}
-            className="p-2 bg-gray-800 text-white rounded active:border-black border active:bg-slate-100 active:text-black font-medium"
-          >
-            Get started for Free
-          </button>
-        </div>
-        <div className="gap-3 pb-5 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {coursesData.map((data, index) => {
-            return (
-              <div
-                key={index}
-                className="p-3 hover:scale-105 cursor-pointer bg-gray-100 rounded-md"
-              >
-                <img
-                  src={data.img}
-                  className="mb-3 w-full object-cover h-40"
-                  alt=""
-                />
-                <div className="flex justify-between text-gray-600">
-                  <small>7600 Students</small>
-                  <small>1h 13m</small>
-                </div>
-                <div className="relative h-24">
-                  <p className="font-semibold text-teal-950 absolute top-1">
-                    YouTube Success: Script, Shoot & Edit with MKBHD
-                  </p>
-                  <small className="absolute bottom-1 text-gray-600">
-                    {data.creator}
-                  </small>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <div className="pt-28 pb-20 gap-5 flex flex-col justify-center">
+      <h1 className="capitalize px-3 text-2xl md:text-4xl text-center font-bold">
+        Explore inspiring online courses
+      </h1>
+      <div className="flex justify-center">
+        <button
+          onClick={() => navigate("/book-demo")}
+          className="p-2 bg-gray-800 text-white rounded active:border-black border active:bg-slate-100 active:text-black font-medium"
+        >
+          Get started for Free
+        </button>
       </div>
-    </>
+      <div className="gap-3 pb-5 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {coursesData.map((data, index) => {
+          return (
+            <div
+              key={index}
+              className="p-3 hover:scale-105 cursor-pointer bg-gray-100 rounded-md"
+            >
+              <img
+                src={data.img}
+                className="mb-3 w-full object-cover h-40"
+                alt=""
+              />
+              <div className="flex justify-between text-gray-600">
+                <small>7600 Students</small>
+                <small>1h 13m</small>
+              </div>
+              <div className="relative h-24">
+                <p className="font-semibold text-teal-950 absolute top-1">
+                  YouTube Success: Script, Shoot & Edit with MKBHD
+                </p>
+                <small className="absolute bottom-1 text-gray-600">
+                  {data.creator}
+                </small>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

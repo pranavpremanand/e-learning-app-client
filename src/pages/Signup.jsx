@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
 import { toast } from "react-hot-toast";
 import { SpinnerContext } from "../components/Context";
+import { Footer } from "../components/Footer";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -50,9 +51,9 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <div className="h-screen">
       <Navbar />
-      <div className="pt-28 sm:pt-36 flex flex-col justify-center items-center gap-2">
+      <div className="h-full flex flex-col justify-center items-center gap-2">
         <img src={LogoImg} className="w-32" alt="" />
         <form onSubmit={signupUser} className="">
           <div className="flex flex-col justify-center items-center w-screen gap-4">
@@ -179,7 +180,8 @@ const Signup = () => {
           </p>
         </small>
       </div>
-    </>
+      <Footer/>
+    </div>
   );
 };
 
