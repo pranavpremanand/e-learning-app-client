@@ -8,7 +8,7 @@ const DemoForm = () => {
     <>
       <Navbar />
       <SignupForm />
-      <Footer/>
+      <Footer />
     </>
   );
 };

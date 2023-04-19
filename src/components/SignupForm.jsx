@@ -93,7 +93,7 @@ const SignupForm = () => {
                   <small className="text-red-600">{err.phoneErr}</small>
                 )}
               </div>
-              <div className="md:absolute md:right-0 md:w-1/2 rounded-sm">
+              <div className="absolute md:right-0 w-full mt-12 md:mt-0 md:w-1/2 rounded-sm">
                 <div className="mb-1 w-full py-2 bg-white">
                   <button
                     type="button"
@@ -134,7 +134,7 @@ const SignupForm = () => {
             </div>
             <button
               type="submit"
-              className="mt-4 uppercase w-full rounded-sm bg-orange-600 py-2 text-white font-medium active:bg-orange-700"
+              className="mt-14 md:mt-4 uppercase w-full rounded-sm bg-orange-600 py-2 text-white font-medium active:bg-orange-700"
             >
               Submit request
             </button>
